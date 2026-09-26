@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brainrot Terminal JP</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        /* ====================
+           ヘッダー
+        ==================== */
+
+        header {
+            background: #181818;
+            padding: 22px 15px;
+            text-align: center;
+            border-bottom: 2px solid #333;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header p {
+            margin: 7px 0 0;
+            color: #aaa;
+        }
+
+
+        /* ====================
+           ナビゲーション
+        ==================== */
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px;
+            background: #202020;
+            flex-wrap: wrap;
+        }
+
+        nav button {
+            background: #303030;
+            color: white;
+            border: 1px solid #444;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        nav button:hover {
+            background: #444;
+        }
+
+        nav button.active {
+            background: #555;
+        }
+
+
+        /* ====================
+           ページ
+        ==================== */
+
+        .page {
+            display: none;
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+
+        /* ====================
+           通常カード
+        ==================== */
+
+        .card {
+            background: #1d1d1d;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+
+        /* ====================
+           価値キャラDB
+        ==================== */
+
+        .database-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .database-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 14px 18px;
+
+            background: #1d1d1d;
+            border: 1px solid #333;
+            border-radius: 8px;
+
+            transition: 0.15s;
+        }
+
+        .database-item:hover {
+            background: #252525;
+        }
+
+        .database-item span {
+            font-size: 16px;
+        }
+
+        .database-item strong {
+            font-size: 20px;
+            min-width: 30px;
+            text-align: right;
+        }
+
+
+        /* ====================
+           価値表
+        ==================== */
+
+        .value-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1d1d1d;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .value-table th,
+        .value-table td {
+            padding: 14px;
+            border-bottom: 1px solid #333;
+            text-align: left;
+        }
+
+        .value-table th {
+            background: #292929;
+        }
+
+
+        /* ====================
+           フッター
+        ==================== */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+            border-top: 1px solid #292929;
+            margin-top: 30px;
+        }
+
+
+        /* ====================
+           スマホ対応
+        ==================== */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 23px;
+            }
+
+            nav {
+                gap: 6px;
+            }
+
+            nav button {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+
+            .page {
+                padding: 22px 12px;
+            }
+
+            .database-item {
+                padding: 13px 14px;
+            }
+
+            .database-item span {
+                font-size: 14px;
+            }
+
+            .database-item strong {
+                font-size: 18px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ====================
+     ヘッダー
+==================== -->
+
+<header>
+
+    <h1>🧠 Brainrot Terminal JP</h1>
+
+    <p>Fortnite Brainrot 情報サイト</p>
+
+</header>
+
+
+
+<!-- ====================
+     ナビゲーション
+==================== -->
+
+<nav>
+
+    <button
+        id="btn-duplication"
+        onclick="showPage('duplication', this)">
+        1. 増殖リスト
+    </button>
+
+    <button
+        id="btn-database"
+        onclick="showPage('database', this)">
+        2. 価値キャラDB
+    </button>
+
+    <button
+        id="btn-value"
+        onclick="showPage('value', this)">
+        3. 価値表
+    </button>
+
+</nav>
+
+
+
+<!-- ====================
+     1. 増殖リスト
+==================== -->
+
+<section
+    id="duplication"
+    class="page active">
+
+    <h2>📋 増殖リスト</h2>
+
+    <div class="card">
+
+        <h3>増殖キャラ一覧</h3>
+
+        <p>
+            ここに増殖情報を追加予定。
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ====================
+     2. 価値キャラDB
+==================== -->
+
+<section
+    id="database"
+    class="page">
+
+    <h2>🧠 価値キャラDB</h2>
+
+
+    <div class="database-list">
+
+
+        <!-- 価値5 -->
+
+        <div class="database-item">
+            <span>Alessiooooooo</span>
+            <strong>5</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Los Job Jobsitos</span>
+            <strong>5</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Rhino Helicopterino</span>
+            <strong>5</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Il Bisonte Giuppitere</span>
+            <strong>5</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Trifoglita Bicicleta</span>
+            <strong>5</strong>
+        </div>
+
+
+        <!-- 価値4 -->
+
+        <div class="database-item">
+            <span>Los Sigma Boys</span>
+            <strong>4</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Ti Ti Ti Sahur</span>
+            <strong>4</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Los Vaquitas Saturnitas</span>
+            <strong>4</strong>
+        </div>
+
+
+        <!-- 価値3 -->
+
+        <div class="database-item">
+            <span>Clove Clove Clove Sahur</span>
+            <strong>3</strong>
+        </div>
+
+        <div class="database-item">
+            <span>La Easter Eggolah</span>
+            <strong>3</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Girafa Celeste</span>
+            <strong>3</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Peeling Peely</span>
+            <strong>3</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Bella Pancacita</span>
+            <strong>3</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Los Christmas bros</span>
+            <strong>3</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Yule Yule Il Reino</span>
+            <strong>3</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Te Te Te Sahur</span>
+            <strong>3</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Klombo</span>
+            <strong>3</strong>
+        </div>
+
+
+        <!-- 価値2 -->
+
+        <div class="database-item">
+            <span>Los Garamadungcitos</span>
+            <strong>2</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Tung Ballerina Sahur</span>
+            <strong>2</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Cakino Birthino</span>
+            <strong>2</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Jisaboa Dashi</span>
+            <strong>2</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Fishinis Santinis</span>
+            <strong>2</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Nooo My Present</span>
+            <strong>2</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Elf Elf Elf</span>
+            <strong>2</strong>
+        </div>
+
+        <div class="database-item">
+            <span>La Christmas Combinacion</span>
+            <strong>2</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Cookipat</span>
+            <strong>2</strong>
+        </div>
+
+        <div class="database-item">
+            <span>25</span>
+            <strong>2</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Santatini el Treetini</span>
+            <strong>2</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Ferinsini Luckini</span>
+            <strong>2</strong>
+        </div>
+
+        <div class="database-item">
+            <span>Koinobori Shogunelli</span>
+            <strong>2</strong>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ====================
+     3. 価値表
+==================== -->
+
+<section
+    id="value"
+    class="page">
+
+    <h2>💰 価値表</h2>
+
+
+    <table class="value-table">
+
+        <thead>
+
+            <tr>
+                <th>レベル</th>
+                <th>価値</th>
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+            <tr>
+                <td>Lv.10</td>
+                <td>1</td>
+            </tr>
+
+            <tr>
+                <td>Lv.50</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td>Lv.100</td>
+                <td>3</td>
+            </tr>
+
+            <tr>
+                <td>Lv.125</td>
+                <td>4</td>
+            </tr>
+
+            <tr>
+                <td>Lv.150</td>
+                <td>5</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+
+<!-- ====================
+     フッター
+==================== -->
+
+<footer>
+
+    <p>Brainrot Terminal JP</p>
+
+    <p>Fortnite Brainrot 情報サイト</p>
+
+</footer>
+
+
+
+<!-- ====================
+     JavaScript
+==================== -->
+
+<script>
+
+function showPage(pageId, button) {
+
+    // 全ページを非表示
+    const pages = document.querySelectorAll(".page");
+
+    pages.forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+
+    // 選択したページを表示
+    const selectedPage =
+        document.getElementById(pageId);
+
+    selectedPage.classList.add("active");
+
+
+    // ボタンのactiveを全部解除
+    const buttons =
+        document.querySelectorAll("nav button");
+
+    buttons.forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+
+    // 押したボタンをactiveにする
+    if (button) {
+        button.classList.add("active");
+    }
+
+}
+
+
+// 最初のページのボタンをactiveにする
+document
+    .getElementById("btn-duplication")
+    .classList.add("active");
+
+</script>
+
+
+</body>
+</html>
