@@ -103,7 +103,44 @@
             border: 1px solid #333;
             border-radius: 12px;
             padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+
+        /* ====================
+           増殖リスト
+        ==================== */
+
+        .duplication-group {
+            background: #1d1d1d;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 18px;
+        }
+
+        .duplication-group h3 {
+            margin-top: 0;
             margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .duplication-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .duplication-item {
+            background: #252525;
+            border: 1px solid #3a3a3a;
+            border-radius: 8px;
+            padding: 12px 15px;
+            line-height: 1.5;
         }
 
 
@@ -217,6 +254,14 @@
             .database-item strong {
                 font-size: 18px;
             }
+
+            .duplication-group {
+                padding: 15px;
+            }
+
+            .duplication-item {
+                font-size: 14px;
+            }
         }
 
     </style>
@@ -278,13 +323,100 @@
 
     <h2>📋 増殖リスト</h2>
 
-    <div class="card">
 
-        <h3>増殖キャラ一覧</h3>
+    <!-- ロス大砲 -->
 
-        <p>
-            ここに増殖情報を追加予定。
-        </p>
+    <div class="duplication-group">
+
+        <h3>🏴‍☠️ ロス大砲 ▶</h3>
+
+        <div class="duplication-list">
+
+            <div class="duplication-item">
+                ゴシック雷グリッチ波
+            </div>
+
+            <div class="duplication-item">
+                チョコのパンプキンツタグリッチ花火コウモリ
+            </div>
+
+            <div class="duplication-item">
+                カニバのトイレグリッチ雷
+            </div>
+
+            <div class="duplication-item">
+                フットボールの花火雷
+            </div>
+
+            <div class="duplication-item">
+                マジカルのキューピットグリッチトイレ
+            </div>
+
+            <div class="duplication-item">
+                ゴシックの雷花火波
+            </div>
+
+            <div class="duplication-item">
+                フットボールのキューピットグリッチパンプキン波
+            </div>
+
+            <div class="duplication-item">
+                花火コウモリグリッチ波
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ロス蜘蛛 -->
+
+    <div class="duplication-group">
+
+        <h3>🕷️ ロス蜘蛛 ▶</h3>
+
+        <div class="duplication-list">
+
+            <div class="duplication-item">
+                ネオンの7変異
+            </div>
+
+            <div class="duplication-item">
+                サマーの波キューピットグリッチ波
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- その他 -->
+
+    <div class="duplication-group">
+
+        <h3>📦 その他 ▶</h3>
+
+        <div class="duplication-list">
+
+            <div class="duplication-item">
+                ドリーミー大砲（無変異）
+            </div>
+
+            <div class="duplication-item">
+                ラブショコーネ（波変異）
+            </div>
+
+            <div class="duplication-item">
+                ヘブンモビトロン（無変異）
+            </div>
+
+            <div class="duplication-item">
+                ヘブン蜘蛛女（無変異）
+            </div>
+
+        </div>
 
     </div>
 
@@ -306,9 +438,7 @@
     <div class="database-list">
 
 
-        <!-- ====================
-             価値5
-        ==================== -->
+        <!-- 価値5 -->
 
         <div class="database-item">
             <span>Alessiooooooo</span>
@@ -336,9 +466,7 @@
         </div>
 
 
-        <!-- ====================
-             価値4
-        ==================== -->
+        <!-- 価値4 -->
 
         <div class="database-item">
             <span>Los Sigma Boys</span>
@@ -356,9 +484,7 @@
         </div>
 
 
-        <!-- ====================
-             価値3
-        ==================== -->
+        <!-- 価値3 -->
 
         <div class="database-item">
             <span>Clove Clove Clove Sahur</span>
@@ -406,9 +532,7 @@
         </div>
 
 
-        <!-- ====================
-             価値2
-        ==================== -->
+        <!-- 価値2 -->
 
         <div class="database-item">
             <span>Los Garamadungcitos</span>
@@ -476,9 +600,7 @@
         </div>
 
 
-        <!-- ====================
-             価値1
-        ==================== -->
+        <!-- 価値1 -->
 
         <div class="database-item">
             <span>Popocatepelini Popozini</span>
@@ -523,8 +645,8 @@
         <thead>
 
             <tr>
-                <th>レベル</th>
                 <th>価値</th>
+                <th>基準</th>
             </tr>
 
         </thead>
@@ -533,28 +655,28 @@
         <tbody>
 
             <tr>
-                <td>Lv.10</td>
                 <td>1</td>
+                <td>通ドラ</td>
             </tr>
 
             <tr>
-                <td>Lv.50</td>
                 <td>2</td>
+                <td>イベ蜘蛛</td>
             </tr>
 
             <tr>
-                <td>Lv.100</td>
                 <td>3</td>
+                <td>イベトラック</td>
             </tr>
 
             <tr>
-                <td>Lv.125</td>
                 <td>4</td>
+                <td>イベトラック4変異➕</td>
             </tr>
 
             <tr>
-                <td>Lv.150</td>
                 <td>5</td>
+                <td>イベ大砲3変異➕</td>
             </tr>
 
         </tbody>
